@@ -46,6 +46,13 @@ def download_audio(url, output_dir="downloads", skip_confirmation=False):
         # IMPORTANT: Continue on download errors
         'ignoreerrors': True,  # Continue on download/extraction errors
         'abort_on_unavailable_fragment': False,  # Don't abort on fragment errors
+        # Fix for YouTube SABR issue - use different clients
+        'extractor_args': {
+            'youtube': {
+                'player_client': ['android', 'web'],
+                'player_skip': ['webpage', 'configs'],
+            }
+        },
     }
     
     try:
