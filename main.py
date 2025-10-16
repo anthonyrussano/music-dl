@@ -46,6 +46,8 @@ def download_audio(url, output_dir="downloads", skip_confirmation=False):
         # IMPORTANT: Continue on download errors
         'ignoreerrors': True,  # Continue on download/extraction errors
         'abort_on_unavailable_fragment': False,  # Don't abort on fragment errors
+        # Enable playlist downloading
+        'noplaylist': False,  # Download entire playlist if URL contains playlist
         # Fix for YouTube SABR issue - use different clients
         'extractor_args': {
             'youtube': {
